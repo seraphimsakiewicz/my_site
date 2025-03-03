@@ -10,9 +10,37 @@ import {
   GraduationCap,
 } from "lucide-react";
 import { TechStack } from "@/src/components/tech-stack";
-import { ProjectCard } from "@/src/components/project-card";
+// import { ProjectCard } from "@/src/components/project-card";
 import ThemeSwitch from "@/src/components/ThemeSwitch";
 import Link from "next/link";
+
+// Work experience data
+const workExperience = [
+  {
+    company: "Method3",
+    position: "Full Stack Developer",
+    location: "Sparta, New Jersey",
+    period: "July 2023 - Present",
+    website: "https://method3.com/",
+    description: "Built a full-stack AWS S3 content management system with React and Node. Rebuilt over 100 pages from jQuery to modern, responsive pages using React, TypeScript, and Material-UI. Developed interactive tools with React Reducer and MUI components. Conducted rigorous code reviews, promoted best practices, and optimized GitLab deployments."
+  },
+  {
+    company: "Maze Digital",
+    position: "Full Stack Developer",
+    location: "Marsa, Malta",
+    period: "March 2022 - July 2023",
+    website: "https://maze.digital/",
+    description: "Developed a Node.js/Express server hosted on AWS Lambda to integrate Xero and Sage accounting APIs. Implemented an AWS Step Function to calculate carbon usage by importing invoices through a state machine. Built a robust Admin Portal using React with TypeScript. Enhanced the CRM application with Cypress for end-to-end tests and Jest for unit tests."
+  },
+  {
+    company: "Overteam",
+    position: "Full Stack Developer",
+    location: "Moscow, Russia",
+    period: "May 2021 - May 2022",
+    website: "https://overteam.ru/",
+    description: "Developed complex SQL queries and Node.js backend for a dynamic AdInsure insurance platform. Built React UI components for a seamless user experience. Utilized NodeJS and Puppeteer to generate dynamic contracts based on user input. Implemented validation handling for the contract creation process and designed unit tests using Mocha."
+  }
+];
 
 export default function Home() {
   const scrollToSection = (id: string) => {
@@ -128,107 +156,46 @@ export default function Home() {
                   Work Experience
                 </h3>
                 <div className="space-y-8">
-                  <div className="pb-8 border-b border-[#EBEAED] dark:border-gray-800">
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <h4 className="text-xl font-medium text-[#42446E] dark:text-white mb-2">
-                          Full Stack Developer
-                        </h4>
-                        <div className="flex items-center gap-6 text-[#666666] dark:text-[#a7a7a7]">
+                  {workExperience.map((job, index) => (
+                    <div key={index} className="pb-8 border-b border-[#EBEAED] dark:border-gray-800">
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h4 className="text-xl font-medium text-[#42446E] dark:text-white mb-2">
+                            {job.position}
+                          </h4>
+                          <div className="flex items-center gap-6 text-[#666666] dark:text-[#a7a7a7]">
+                            <div className="flex items-center gap-1">
+                              <Building2 className="w-4 h-4" />
+                              <span>
+                                <Link
+                                  href={job.website}
+                                  target="_blank"
+                                  className="hover:text-[#00d8ff] transition-colors underline decoration-dotted"
+                                >
+                                  {job.company}
+                                </Link>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex flex-col items-end gap-2">
                           <div className="flex items-center gap-1">
-                            <Building2 className="w-4 h-4" />
-                            <span>
-                              <Link
-                                href="https://method3.com/"
-                                target="_blank"
-                                className="hover:text-[#00d8ff] transition-colors underline decoration-dotted"
-                              >
-                                Method3
-                              </Link>
-                            </span>
+                            <MapPin className="w-4 h-4" />
+                            <span>{job.location}</span>
+                          </div>
+                          <div className="flex items-center gap-1 text-[#666666] dark:text-[#a7a7a7]">
+                            <Calendar className="w-4 h-4" />
+                            <span>{job.period}</span>
                           </div>
                         </div>
                       </div>
-                      <div className="flex flex-col items-end gap-2">
-                        <div className="flex items-center gap-1">
-                          <MapPin className="w-4 h-4" />
-                          <span>Sparta, New Jersey</span>
-                        </div>
-                        <div className="flex items-center gap-1 text-[#666666] dark:text-[#a7a7a7]">
-                          <Calendar className="w-4 h-4" />
-                          <span>July 2023 - Present</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
 
-                  <div className="pb-8 border-b border-[#EBEAED] dark:border-gray-800">
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <h4 className="text-xl font-medium text-[#42446E] dark:text-white mb-2">
-                          Full Stack Developer
-                        </h4>
-                        <div className="flex items-center gap-6 text-[#666666] dark:text-[#a7a7a7]">
-                          <div className="flex items-center gap-1">
-                            <Building2 className="w-4 h-4" />
-                            <span>
-                              <Link
-                                href="https://maze.digital/"
-                                target="_blank"
-                                className="hover:text-[#00d8ff] transition-colors underline decoration-dotted"
-                              >
-                                Maze Digital
-                              </Link>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex flex-col items-end gap-2">
-                        <div className="flex items-center gap-1">
-                          <MapPin className="w-4 h-4" />
-                          <span>Marsa, Malta</span>
-                        </div>
-                        <div className="flex items-center gap-1 text-[#666666] dark:text-[#a7a7a7]">
-                          <Calendar className="w-4 h-4" />
-                          <span>March 2022 - July 2023</span>
-                        </div>
+                      {/* Job Description */}
+                      <div className="mt-4">
+                        <p className="text-[#666666] dark:text-[#a7a7a7] leading-relaxed">{job.description}</p>
                       </div>
                     </div>
-                  </div>
-
-                  <div className="pb-8 border-b border-[#EBEAED] dark:border-gray-800">
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <h4 className="text-xl font-medium text-[#42446E] dark:text-white mb-2">
-                          Full Stack Developer
-                        </h4>
-                        <div className="flex items-center gap-6 text-[#666666] dark:text-[#a7a7a7]">
-                          <div className="flex items-center gap-1">
-                            <Building2 className="w-4 h-4" />
-                            <span>
-                              <Link
-                                href="https://overteam.ru/"
-                                target="_blank"
-                                className="hover:text-[#00d8ff] transition-colors underline decoration-dotted"
-                              >
-                                Overteam
-                              </Link>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex flex-col items-end gap-2">
-                        <div className="flex items-center gap-1">
-                          <MapPin className="w-4 h-4" />
-                          <span>Moscow, Russia</span>
-                        </div>
-                        <div className="flex items-center gap-1 text-[#666666] dark:text-[#a7a7a7]">
-                          <Calendar className="w-4 h-4" />
-                          <span>May 2021 - May 2022</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
 
@@ -277,7 +244,7 @@ export default function Home() {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-16">
+        {/* <section id="projects" className="py-16">
           <h2 className="text-2xl font-bold text-center mb-2">Projects</h2>
           <p className="text-center text-[#666666] dark:text-[#a7a7a7] mb-12">
             Things I&apos;ve built so far
@@ -289,12 +256,12 @@ export default function Home() {
                 key={index}
                 title={`Project ${index} goes here`}
                 description="This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content"
-                // imageUrl={`/placeholder.svg?height=200&width=300`}
+                imageUrl={`/placeholder.svg?height=200&width=300`}
                 techStack={["HTML", "CSS", "JavaScript"]}
               />
             ))}
           </div>
-        </section>
+        </section> */}
 
         {/* Contact Section */}
         <section id="contact" className="py-16">

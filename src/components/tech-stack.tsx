@@ -68,7 +68,13 @@ export const TechStack = () => {
 
       <div className="flex flex-col items-center">
         <div className="w-16 h-16 flex items-center justify-center rounded-lg bg-green-100 dark:bg-green-900/20 mb-2">
-          <Image src="/icons/aws.svg" alt="AWS" width={32} height={32} />
+          <Image
+            src="/icons/aws.svg"
+            alt="AWS"
+            width={32}
+            height={32}
+            className="dark:invert dark:hue-rotate-180"
+          />
         </div>
         <span className="text-sm">AWS</span>
       </div>

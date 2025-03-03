@@ -9,12 +9,10 @@ import {
   MapPin,
   Calendar,
   Building2,
-  FileUser
 } from "lucide-react";
 import { TechStack } from "@/src/components/tech-stack";
 import { ProjectCard } from "@/src/components/project-card";
 import { Badge } from "@/src/components/ui/badge";
-import { Card } from "@/src/components/ui/card";
 import Link from "next/link";
 
 export default function Home() {
@@ -195,7 +193,7 @@ export default function Home() {
                         <div className="flex items-center gap-6 text-[#666666] dark:text-[#a7a7a7]">
                           <div className="flex items-center gap-1">
                             <Building2 className="w-4 h-4" />
-                            <span>Dr. Rajkumar's Learning App</span>
+                            <span>Dr. Rajkumar&apos;s Learning App</span>
                           </div>
                           <div className="flex items-center gap-1">
                             <MapPin className="w-4 h-4" />
@@ -316,7 +314,7 @@ export default function Home() {
         <section id="tech-stack" className="py-16">
           <h2 className="text-2xl font-bold text-center mb-2">My Tech Stack</h2>
           <p className="text-center text-[#666666] dark:text-[#a7a7a7] mb-12">
-            Technologies I've been working with recently
+            Technologies I&apos;ve been working with recently
           </p>
 
           <TechStack />
@@ -326,7 +324,7 @@ export default function Home() {
         <section id="projects" className="py-16">
           <h2 className="text-2xl font-bold text-center mb-2">Projects</h2>
           <p className="text-center text-[#666666] dark:text-[#a7a7a7] mb-12">
-            Things I've built so far
+            Things I&apos;ve built so far
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

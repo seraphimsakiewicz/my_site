@@ -1,11 +1,11 @@
-import Image from "next/image"
+// import Image from "next/image"
 import Link from "next/link"
 import { Github, ExternalLink } from "lucide-react"
 
 interface ProjectCardProps {
   title: string
   description: string
-  imageUrl: string
+  // imageUrl: string
   techStack: string[]
   liveLink?: string
   githubLink?: string
@@ -14,7 +14,7 @@ interface ProjectCardProps {
 export const ProjectCard = ({
   title,
   description,
-  imageUrl,
+  // imageUrl,
   techStack,
   liveLink = "#",
   githubLink = "#",
@@ -22,13 +22,13 @@ export const ProjectCard = ({
   return (
     <div className="bg-white dark:bg-[#363636] rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
       <div className="h-48 overflow-hidden">
-        <Image
+        {/* <Image
           // src={imageUrl || "/placeholder.svg"}
           alt={title}
           width={400}
           height={200}
           className="w-full h-full object-cover"
-        />
+        /> */}
       </div>
 
       <div className="p-5">

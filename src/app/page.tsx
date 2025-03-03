@@ -1,0 +1,389 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import {
+  Github,
+  Twitter,
+  Linkedin,
+  MapPin,
+  Calendar,
+  Building2,
+  FileUser
+} from "lucide-react";
+import { TechStack } from "@/src/components/tech-stack";
+import { ProjectCard } from "@/src/components/project-card";
+import { Badge } from "@/src/components/ui/badge";
+import { Card } from "@/src/components/ui/card";
+import Link from "next/link";
+
+export default function Home() {
+  const [darkMode, setDarkMode] = useState(false);
+  //v0.dev/chat/recreate-figma-ui-ccpITeeYdQF#KulT5Pgyrq2LGtReFvVO4gbqtfmZYXUq TODO about section
+  https: useEffect(() => {
+    // Check if user prefers dark mode
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    setDarkMode(prefersDark);
+
+    // Apply dark mode class to html element
+    if (prefersDark) {
+      document.documentElement.classList.add("dark");
+    }
+  }, []);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    document.documentElement.classList.toggle("dark");
+  };
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-white dark:bg-[#191919] text-[#42446e] dark:text-white transition-colors duration-300">
+      <header className="fixed top-0 left-0 right-0 bg-white/80 dark:bg-[#191919]/80 backdrop-blur-sm z-50 border-b border-gray-200 dark:border-gray-800">
+        <nav className="max-w-6xl mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
+            <button
+              onClick={() => scrollToSection("home")}
+              className="text-[#42446e] dark:text-white font-bold text-lg"
+            >
+              {"<SS/>"}
+            </button>
+            <div className="hidden md:flex items-center space-x-8">
+              <button
+                onClick={() => scrollToSection("home")}
+                className="hover:text-[#00d8ff] transition-colors"
+              >
+                Home
+              </button>
+              <button
+                onClick={() => scrollToSection("about")}
+                className="hover:text-[#00d8ff] transition-colors"
+              >
+                About
+              </button>
+              <button
+                onClick={() => scrollToSection("tech-stack")}
+                className="hover:text-[#00d8ff] transition-colors"
+              >
+                Tech Stack
+              </button>
+              <button
+                onClick={() => scrollToSection("projects")}
+                className="hover:text-[#00d8ff] transition-colors"
+              >
+                Projects
+              </button>
+              <button
+                onClick={() => scrollToSection("contact")}
+                className="hover:text-[#00d8ff] transition-colors"
+              >
+                Contact
+              </button>
+            </div>
+            <div className="flex items-center space-x-3">
+              <button onClick={toggleDarkMode} className="p-1 rounded-full">
+                {darkMode ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                  </svg>
+                )}
+              </button>
+              <Github className="w-5 h-5 cursor-pointer hover:text-[#00d8ff]" />
+              <Twitter className="w-5 h-5 cursor-pointer hover:text-[#00d8ff]" />
+              <Linkedin className="w-5 h-5 cursor-pointer hover:text-[#00d8ff]" />
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <main className="max-w-6xl mx-auto px-4 pt-24">
+        {/* Hero Section */}
+        <section
+          id="home"
+          className="flex flex-col md:flex-row items-center justify-between py-16"
+        >
+          <div className="md:w-2/3">
+            <h1 className="text-3xl font-bold mb-2">
+              Hi 👋,
+              <br />
+              My name is{" "}
+              <span className="text-[#00d8ff] dark:text-[#00d8ff]">
+                Seraphim Sakiewicz
+              </span>
+              <br />I build things for web
+            </h1>
+          </div>
+          <div className="md:w-1/3 flex justify-center mt-8 md:mt-0">
+            <div className="rounded-full border-4 border-[black] dark:border-[white] w-48 h-48 overflow-hidden">
+              <Image
+                src="/images/seraphim-codes.png?height=192&width=192"
+                alt="Seraphim Sakiewicz"
+                width={192}
+                height={192}
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* About Section */}
+        <section id="about" className="py-16">
+          <h2 className="text-2xl font-bold mb-8 text-[#42446E] dark:text-white">
+            About Me
+          </h2>
+
+          <div className="space-y-12">
+            <p className="text-[#666666] dark:text-[#a7a7a7] max-w-3xl leading-relaxed">
+              The Generator App is an online tool that helps you to export
+              ready-made templates ready to work as your future website. It
+              helps you to combine slides, panels and other components and
+              export it as a set of static files: HTML/CSS/JS.
+            </p>
+
+            <div className="space-y-12">
+              <div>
+                <h3 className="text-2xl font-bold mb-8 text-[#42446E] dark:text-white">
+                  Work Experience
+                </h3>
+                <div className="space-y-8">
+                  <div className="pb-8 border-b border-[#EBEAED] dark:border-gray-800">
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <h4 className="text-xl font-medium text-[#42446E] dark:text-white mb-2">
+                          Junior Web Developer
+                        </h4>
+                        <div className="flex items-center gap-6 text-[#666666] dark:text-[#a7a7a7]">
+                          <div className="flex items-center gap-1">
+                            <Building2 className="w-4 h-4" />
+                            <span>Dr. Rajkumar's Learning App</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <MapPin className="w-4 h-4" />
+                            <span>Sparta</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex flex-col items-end gap-2">
+                        <Badge className="bg-[#D7FFE0] text-[#018C0F] dark:bg-[#018C0F]/20 dark:text-[#D7FFE0] hover:bg-[#D7FFE0] dark:hover:bg-[#018C0F]/20">
+                          Full Time
+                        </Badge>
+                        <div className="flex items-center gap-1 text-[#666666] dark:text-[#a7a7a7]">
+                          <Calendar className="w-4 h-4" />
+                          <span>Sep 2021 - Dec 2021</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pb-8 border-b border-[#EBEAED] dark:border-gray-800">
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <h4 className="text-xl font-medium text-[#42446E] dark:text-white mb-2">
+                          Web Development Intern
+                        </h4>
+                        <div className="flex items-center gap-6 text-[#666666] dark:text-[#a7a7a7]">
+                          <div className="flex items-center gap-1">
+                            <Building2 className="w-4 h-4" />
+                            <span>Unified Web Solutions</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <MapPin className="w-4 h-4" />
+                            <span>Sparta</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex flex-col items-end gap-2">
+                        <Badge className="bg-[#D7FFE0] text-[#018C0F] dark:bg-[#018C0F]/20 dark:text-[#D7FFE0] hover:bg-[#D7FFE0] dark:hover:bg-[#018C0F]/20">
+                          Internship
+                        </Badge>
+                        <div className="flex items-center gap-1 text-[#666666] dark:text-[#a7a7a7]">
+                          <Calendar className="w-4 h-4" />
+                          <span>Sep 2021 - Dec 2021</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pb-8 border-b border-[#EBEAED] dark:border-gray-800">
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <h4 className="text-xl font-medium text-[#42446E] dark:text-white mb-2">
+                          SEO / SEM Specialist
+                        </h4>
+                        <div className="flex items-center gap-6 text-[#666666] dark:text-[#a7a7a7]">
+                          <div className="flex items-center gap-1">
+                            {/* <Building2 className="w-4 h-4" /> */}
+                            <span>RRAVE</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <MapPin className="w-4 h-4" />
+                            <span>Sparta</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="flex flex-col items-end gap-2">
+                        <Badge className="bg-[#D7FFE0] text-[#018C0F] dark:bg-[#018C0F]/20 dark:text-[#D7FFE0] hover:bg-[#D7FFE0] dark:hover:bg-[#018C0F]/20">
+                          Internship
+                        </Badge>
+                        <div className="flex items-center gap-1 text-[#666666] dark:text-[#a7a7a7]">
+                          <Calendar className="w-4 h-4" />
+                          <span>Sep 2021 - Dec 2021</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold mb-8 text-[#42446E] dark:text-white">
+                  Education
+                </h3>
+                <div className="pb-8 border-b border-[#EBEAED] dark:border-gray-800">
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <h4 className="text-xl font-medium text-[#42446E] dark:text-white mb-2">
+                        Bachelor in Electronics & Communication
+                      </h4>
+                      <div className="flex items-center gap-6 text-[#666666] dark:text-[#a7a7a7]">
+                        <div className="flex items-center gap-1">
+                          {/* <GraduationCap className="w-4 h-4" /> */}
+                          <span>Bangalore Institute of Technology</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <MapPin className="w-4 h-4" />
+                          <span>Sparta</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="flex flex-col items-end gap-2">
+                      <Badge className="bg-[#D7FFE0] text-[#018C0F] dark:bg-[#018C0F]/20 dark:text-[#D7FFE0] hover:bg-[#D7FFE0] dark:hover:bg-[#018C0F]/20">
+                        Full Time
+                      </Badge>
+                      <div className="flex items-center gap-1 text-[#666666] dark:text-[#a7a7a7]">
+                        <Calendar className="w-4 h-4" />
+                        <span>Aug 2016 - Dec 2020</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Tech Stack Section */}
+        <section id="tech-stack" className="py-16">
+          <h2 className="text-2xl font-bold text-center mb-2">My Tech Stack</h2>
+          <p className="text-center text-[#666666] dark:text-[#a7a7a7] mb-12">
+            Technologies I've been working with recently
+          </p>
+
+          <TechStack />
+        </section>
+
+        {/* Projects Section */}
+        <section id="projects" className="py-16">
+          <h2 className="text-2xl font-bold text-center mb-2">Projects</h2>
+          <p className="text-center text-[#666666] dark:text-[#a7a7a7] mb-12">
+            Things I've built so far
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[1, 2, 3, 4, 5, 6].map((index) => (
+              <ProjectCard
+                key={index}
+                title={`Project ${index} goes here`}
+                description="This is sample project description random things are here in description This is sample project lorem ipsum generator for dummy content"
+                // imageUrl={`/placeholder.svg?height=200&width=300`}
+                techStack={["HTML", "CSS", "JavaScript"]}
+              />
+            ))}
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="py-16">
+          <div className="text-center">
+            <h2 className="text-2xl font-bold mb-4">
+              For any questions please mail us:
+            </h2>
+            <a
+              href="mailto:seraphim.codes@gmail.com"
+              className="text-[#00d8ff] text-xl font-medium hover:underline"
+            >
+              seraphim.codes@gmail.com
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer className="border-t border-gray-200 dark:border-gray-800 py-8">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="mb-4 md:mb-0">
+              <span className="text-[#42446e] dark:text-white font-bold text-lg">
+                {"<SS/>"}
+              </span>
+            </div>
+
+            <div className="flex items-center space-x-3 mt-4 md:mt-0">
+              <Link href="https://github.com/seraphimsakiewicz" target="_blank">
+                <Github className="w-5 h-5 cursor-pointer hover:text-[#00d8ff]" />
+              </Link>
+              <Twitter className="w-5 h-5 cursor-pointer hover:text-[#00d8ff]" />
+              <Linkedin className="w-5 h-5 cursor-pointer hover:text-[#00d8ff]" />
+            </div>
+          </div>
+
+          <div className="text-center mt-8 text-sm text-[#666666] dark:text-[#a7a7a7]">
+            <p>
+              © {new Date().getFullYear()} Seraphim Sakiewicz. All rights
+              reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}

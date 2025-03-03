@@ -4,15 +4,14 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import {
   Github,
-  Twitter,
   Linkedin,
   MapPin,
   Calendar,
   Building2,
+  GraduationCap,
 } from "lucide-react";
 import { TechStack } from "@/src/components/tech-stack";
 import { ProjectCard } from "@/src/components/project-card";
-import { Badge } from "@/src/components/ui/badge";
 import Link from "next/link";
 
 export default function Home() {
@@ -127,7 +126,6 @@ export default function Home() {
                 )}
               </button>
               <Github className="w-5 h-5 cursor-pointer hover:text-[#00d8ff]" />
-              <Twitter className="w-5 h-5 cursor-pointer hover:text-[#00d8ff]" />
               <Linkedin className="w-5 h-5 cursor-pointer hover:text-[#00d8ff]" />
             </div>
           </div>
@@ -142,14 +140,15 @@ export default function Home() {
         >
           <div className="md:w-2/3">
             <h1 className="text-3xl font-bold mb-2">
-              Hi 👋,
+              Hey,
               <br />
               My name is{" "}
               <span className="text-[#00d8ff] dark:text-[#00d8ff]">
                 Seraphim Sakiewicz
               </span>
-              <br />I build things for web
+              <br />
             </h1>
+            <p className="text-3xl font-bold mt-4">I build things for the web</p>
           </div>
           <div className="md:w-1/3 flex justify-center mt-8 md:mt-0">
             <div className="rounded-full border-4 border-[black] dark:border-[white] w-48 h-48 overflow-hidden">
@@ -165,19 +164,22 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-16">
-          <h2 className="text-2xl font-bold mb-8 text-[#42446E] dark:text-white">
+        <section id="about" className="py-16 space-y-6">
+          <h2 className="text-2xl font-bold text-[#42446E] dark:text-white">
             About Me
           </h2>
+          <div className="space-y-4">
+            <p className="text-[#666666] dark:text-[#a7a7a7] max-w-3xl leading-relaxed">
+              Full‑Stack engineer specializing in React, Node, TypeScript, and AWS (Lambda, DynamoDB, OpenSearch, StateMachines).
+              I&apos;m currently studying Next.js and GenAI.
+            </p>
+            <p className="text-[#666666] dark:text-[#a7a7a7] max-w-3xl leading-relaxed">
+              I have 3 years of experience in the industry and I have built applications for the insurance,
+              environmental sustainability, and financial industries.
+            </p>
+          </div>
 
           <div className="space-y-12">
-            <p className="text-[#666666] dark:text-[#a7a7a7] max-w-3xl leading-relaxed">
-              The Generator App is an online tool that helps you to export
-              ready-made templates ready to work as your future website. It
-              helps you to combine slides, panels and other components and
-              export it as a set of static files: HTML/CSS/JS.
-            </p>
-
             <div className="space-y-12">
               <div>
                 <h3 className="text-2xl font-bold mb-8 text-[#42446E] dark:text-white">
@@ -188,26 +190,31 @@ export default function Home() {
                     <div className="flex items-start justify-between">
                       <div>
                         <h4 className="text-xl font-medium text-[#42446E] dark:text-white mb-2">
-                          Junior Web Developer
+                          Full Stack Developer
                         </h4>
                         <div className="flex items-center gap-6 text-[#666666] dark:text-[#a7a7a7]">
                           <div className="flex items-center gap-1">
                             <Building2 className="w-4 h-4" />
-                            <span>Dr. Rajkumar&apos;s Learning App</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <MapPin className="w-4 h-4" />
-                            <span>Sparta</span>
+                            <span>
+                              <Link
+                                href="https://method3.com/"
+                                target="_blank"
+                                className="hover:text-[#00d8ff] transition-colors underline decoration-dotted"
+                              >
+                                Method3
+                              </Link>
+                            </span>
                           </div>
                         </div>
                       </div>
                       <div className="flex flex-col items-end gap-2">
-                        <Badge className="bg-[#D7FFE0] text-[#018C0F] dark:bg-[#018C0F]/20 dark:text-[#D7FFE0] hover:bg-[#D7FFE0] dark:hover:bg-[#018C0F]/20">
-                          Full Time
-                        </Badge>
+                        <div className="flex items-center gap-1">
+                          <MapPin className="w-4 h-4" />
+                          <span>Sparta, New Jersey</span>
+                        </div>
                         <div className="flex items-center gap-1 text-[#666666] dark:text-[#a7a7a7]">
                           <Calendar className="w-4 h-4" />
-                          <span>Sep 2021 - Dec 2021</span>
+                          <span>July 2023 - Present</span>
                         </div>
                       </div>
                     </div>
@@ -217,26 +224,31 @@ export default function Home() {
                     <div className="flex items-start justify-between">
                       <div>
                         <h4 className="text-xl font-medium text-[#42446E] dark:text-white mb-2">
-                          Web Development Intern
+                          Full Stack Developer
                         </h4>
                         <div className="flex items-center gap-6 text-[#666666] dark:text-[#a7a7a7]">
                           <div className="flex items-center gap-1">
                             <Building2 className="w-4 h-4" />
-                            <span>Unified Web Solutions</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <MapPin className="w-4 h-4" />
-                            <span>Sparta</span>
+                            <span>
+                              <Link
+                                href="https://maze.digital/"
+                                target="_blank"
+                                className="hover:text-[#00d8ff] transition-colors underline decoration-dotted"
+                              >
+                                Maze Digital
+                              </Link>
+                            </span>
                           </div>
                         </div>
                       </div>
                       <div className="flex flex-col items-end gap-2">
-                        <Badge className="bg-[#D7FFE0] text-[#018C0F] dark:bg-[#018C0F]/20 dark:text-[#D7FFE0] hover:bg-[#D7FFE0] dark:hover:bg-[#018C0F]/20">
-                          Internship
-                        </Badge>
+                        <div className="flex items-center gap-1">
+                          <MapPin className="w-4 h-4" />
+                          <span>Marsa, Malta</span>
+                        </div>
                         <div className="flex items-center gap-1 text-[#666666] dark:text-[#a7a7a7]">
                           <Calendar className="w-4 h-4" />
-                          <span>Sep 2021 - Dec 2021</span>
+                          <span>March 2022 - July 2023</span>
                         </div>
                       </div>
                     </div>
@@ -246,26 +258,31 @@ export default function Home() {
                     <div className="flex items-start justify-between">
                       <div>
                         <h4 className="text-xl font-medium text-[#42446E] dark:text-white mb-2">
-                          SEO / SEM Specialist
+                          Full Stack Developer
                         </h4>
                         <div className="flex items-center gap-6 text-[#666666] dark:text-[#a7a7a7]">
                           <div className="flex items-center gap-1">
-                            {/* <Building2 className="w-4 h-4" /> */}
-                            <span>RRAVE</span>
-                          </div>
-                          <div className="flex items-center gap-1">
-                            <MapPin className="w-4 h-4" />
-                            <span>Sparta</span>
+                            <Building2 className="w-4 h-4" />
+                            <span>
+                              <Link
+                                href="https://overteam.ru/"
+                                target="_blank"
+                                className="hover:text-[#00d8ff] transition-colors underline decoration-dotted"
+                              >
+                                Overteam
+                              </Link>
+                            </span>
                           </div>
                         </div>
                       </div>
                       <div className="flex flex-col items-end gap-2">
-                        <Badge className="bg-[#D7FFE0] text-[#018C0F] dark:bg-[#018C0F]/20 dark:text-[#D7FFE0] hover:bg-[#D7FFE0] dark:hover:bg-[#018C0F]/20">
-                          Internship
-                        </Badge>
+                        <div className="flex items-center gap-1">
+                          <MapPin className="w-4 h-4" />
+                          <span>Moscow, Russia</span>
+                        </div>
                         <div className="flex items-center gap-1 text-[#666666] dark:text-[#a7a7a7]">
                           <Calendar className="w-4 h-4" />
-                          <span>Sep 2021 - Dec 2021</span>
+                          <span>May 2021 - May 2022</span>
                         </div>
                       </div>
                     </div>
@@ -281,26 +298,23 @@ export default function Home() {
                   <div className="flex items-start justify-between">
                     <div>
                       <h4 className="text-xl font-medium text-[#42446E] dark:text-white mb-2">
-                        Bachelor in Electronics & Communication
+                        Bachelor of Science in Accounting and Finance
                       </h4>
                       <div className="flex items-center gap-6 text-[#666666] dark:text-[#a7a7a7]">
                         <div className="flex items-center gap-1">
-                          {/* <GraduationCap className="w-4 h-4" /> */}
-                          <span>Bangalore Institute of Technology</span>
-                        </div>
-                        <div className="flex items-center gap-1">
-                          <MapPin className="w-4 h-4" />
-                          <span>Sparta</span>
+                          <GraduationCap className="w-4 h-4" />
+                          <span> Rutgers Business School</span>
                         </div>
                       </div>
                     </div>
                     <div className="flex flex-col items-end gap-2">
-                      <Badge className="bg-[#D7FFE0] text-[#018C0F] dark:bg-[#018C0F]/20 dark:text-[#D7FFE0] hover:bg-[#D7FFE0] dark:hover:bg-[#018C0F]/20">
-                        Full Time
-                      </Badge>
+                      <div className="flex items-center gap-1">
+                        <MapPin className="w-4 h-4" />
+                        <span>New Brunswick, NJ</span>
+                      </div>
                       <div className="flex items-center gap-1 text-[#666666] dark:text-[#a7a7a7]">
                         <Calendar className="w-4 h-4" />
-                        <span>Aug 2016 - Dec 2020</span>
+                        <span>Sep 2016 - Dec 2020</span>
                       </div>
                     </div>
                   </div>
@@ -344,7 +358,7 @@ export default function Home() {
         <section id="contact" className="py-16">
           <div className="text-center">
             <h2 className="text-2xl font-bold mb-4">
-              For any questions please mail us:
+              For any questions please email me at:
             </h2>
             <a
               href="mailto:seraphim.codes@gmail.com"
@@ -369,7 +383,6 @@ export default function Home() {
               <Link href="https://github.com/seraphimsakiewicz" target="_blank">
                 <Github className="w-5 h-5 cursor-pointer hover:text-[#00d8ff]" />
               </Link>
-              <Twitter className="w-5 h-5 cursor-pointer hover:text-[#00d8ff]" />
               <Linkedin className="w-5 h-5 cursor-pointer hover:text-[#00d8ff]" />
             </div>
           </div>

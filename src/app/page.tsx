@@ -8,6 +8,7 @@ import {
   Calendar,
   Building2,
   GraduationCap,
+  FileText
 } from "lucide-react";
 import { TechStack } from "@/src/components/tech-stack";
 // import { ProjectCard } from "@/src/components/project-card";
@@ -64,39 +65,46 @@ export default function Home() {
             <div className="hidden md:flex items-center space-x-8">
               <button
                 onClick={() => scrollToSection("home")}
-                className="hover:text-[#00d8ff] transition-colors"
+                className="hover:text-[#2563eb] transition-colors"
               >
                 Home
               </button>
               <button
                 onClick={() => scrollToSection("about")}
-                className="hover:text-[#00d8ff] transition-colors"
+                className="hover:text-[#2563eb] transition-colors"
               >
                 About
               </button>
               <button
                 onClick={() => scrollToSection("tech-stack")}
-                className="hover:text-[#00d8ff] transition-colors"
+                className="hover:text-[#2563eb] transition-colors"
               >
                 Tech Stack
               </button>
-              <button
+              {/* <button
                 onClick={() => scrollToSection("projects")}
-                className="hover:text-[#00d8ff] transition-colors"
+                className="hover:text-[#2563eb] transition-colors"
               >
                 Projects
-              </button>
+              </button> */}
               <button
                 onClick={() => scrollToSection("contact")}
-                className="hover:text-[#00d8ff] transition-colors"
+                className="hover:text-[#2563eb] transition-colors"
               >
                 Contact
               </button>
             </div>
             <div className="flex items-center space-x-3">
               <ThemeSwitch />
-              <Github className="w-5 h-5 cursor-pointer hover:text-[#00d8ff]" />
-              <Linkedin className="w-5 h-5 cursor-pointer hover:text-[#00d8ff]" />
+              <Link href="https://drive.google.com/file/d/1NQTDOqTxZe57XmY0WM9_wL7zlhcNxpce/view?usp=sharing" target="_blank" title="View Resume">
+                <FileText className="w-5 h-5 cursor-pointer hover:text-[#2563eb]" />
+              </Link>
+              <Link href="https://github.com/seraphimsakiewicz" target="_blank">
+                <Github className="w-5 h-5 cursor-pointer hover:text-[#2563eb]" />
+              </Link>
+              <Link href="https://www.linkedin.com/in/seraphim-sakiewicz/" target="_blank">
+                <Linkedin className="w-5 h-5 cursor-pointer hover:text-[#2563eb]" />
+              </Link>
             </div>
           </div>
         </nav>
@@ -113,7 +121,7 @@ export default function Home() {
               Hey,
               <br />
               My name is{" "}
-              <span className="text-[#00d8ff] dark:text-[#00d8ff]">
+              <span className="text-[#2563eb] dark:text-[#2563eb]">
                 Seraphim Sakiewicz
               </span>
               <br />
@@ -170,7 +178,7 @@ export default function Home() {
                                 <Link
                                   href={job.website}
                                   target="_blank"
-                                  className="hover:text-[#00d8ff] transition-colors underline decoration-dotted"
+                                  className="hover:text-[#2563eb] transition-colors underline decoration-dotted"
                                 >
                                   {job.company}
                                 </Link>
@@ -271,10 +279,35 @@ export default function Home() {
             </h2>
             <a
               href="mailto:seraphim.codes@gmail.com"
-              className="text-[#00d8ff] text-xl font-medium hover:underline"
+              className="text-[#2563eb] text-xl font-medium hover:underline"
             >
               seraphim.codes@gmail.com
             </a>
+
+            <div className="mt-12">
+              <h3 className="text-xl font-bold mb-4">Looking for my resume?</h3>
+              <a
+                href="https://drive.google.com/file/d/1NQTDOqTxZe57XmY0WM9_wL7zlhcNxpce/view?usp=sharing"
+                className="inline-flex items-center px-6 py-3 bg-[#2563eb] text-white font-medium rounded-md hover:bg-[#1d4ed8] transition-colors duration-300"
+                target="_blank"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+                Download Resume
+              </a>
+            </div>
           </div>
         </section>
       </main>
@@ -289,10 +322,15 @@ export default function Home() {
             </div>
 
             <div className="flex items-center space-x-3 mt-4 md:mt-0">
-              <Link href="https://github.com/seraphimsakiewicz" target="_blank">
-                <Github className="w-5 h-5 cursor-pointer hover:text-[#00d8ff]" />
+              <Link href="https://drive.google.com/file/d/1NQTDOqTxZe57XmY0WM9_wL7zlhcNxpce/view?usp=sharing" target="_blank" title="View Resume">
+                <FileText className="w-5 h-5 cursor-pointer hover:text-[#2563eb]" />
               </Link>
-              <Linkedin className="w-5 h-5 cursor-pointer hover:text-[#00d8ff]" />
+              <Link href="https://github.com/seraphimsakiewicz" target="_blank">
+                <Github className="w-5 h-5 cursor-pointer hover:text-[#2563eb]" />
+              </Link>
+              <Link href="https://www.linkedin.com/in/seraphim-sakiewicz/" target="_blank">
+                <Linkedin className="w-5 h-5 cursor-pointer hover:text-[#2563eb]" />
+              </Link>
             </div>
           </div>
 

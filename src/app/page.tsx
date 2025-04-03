@@ -18,12 +18,20 @@ import Link from "next/link";
 // Work experience data
 const workExperience = [
   {
+    company: "Hack Frontend",
+    position: "Founding Engineer",
+    location: "Sparta, New Jersey",
+    period: "January 2025 - Present",
+    website: "https://hackfrontend.com/",
+    description: "Managed database migrations using <strong>Prisma</strong> and <strong>Neon.js</strong> for seamless schema updates and efficient data handling. Led the <strong>UX/UI design</strong> planning for pagination and filtering of our problems, to allow users to find and share them easily. Implemented dynamic URL‑based filtering and responsive pagination using <strong>Next.js</strong>, <strong>Radix UI</strong>, and <strong>Lucide React</strong>. Built a promo code system using <strong>React Hooks</strong> (<strong>useState</strong>, <strong>useEffect</strong>) to boost user engagement and platform growth."
+  },
+  {
     company: "Method3",
     position: "Full Stack Developer",
     location: "Sparta, New Jersey",
-    period: "July 2023 - Present",
+    period: "July 2023 - December 2024",
     website: "https://method3.com/",
-    description: "Built a full-stack AWS S3 content management system with React and Node. Rebuilt over 100 pages from jQuery to modern, responsive pages using React, TypeScript, and Material-UI. Developed interactive tools with React Reducer and MUI components. Conducted rigorous code reviews, promoted best practices, and optimized GitLab deployments."
+    description: "Built a full-stack <strong>AWS S3</strong> content management system with <strong>React</strong> and <strong>Node</strong>. Rebuilt over 100 pages from jQuery to modern, responsive pages using <strong>React</strong>, <strong>TypeScript</strong>, and <strong>Material-UI</strong>. Developed interactive tools with <strong>React Reducer</strong> and <strong>MUI</strong> components. Conducted rigorous code reviews, promoted best practices, and optimized <strong>GitLab</strong> deployments."
   },
   {
     company: "Maze Digital",
@@ -31,7 +39,7 @@ const workExperience = [
     location: "Marsa, Malta",
     period: "March 2022 - July 2023",
     website: "https://maze.digital/",
-    description: "Developed a Node.js/Express server hosted on AWS Lambda to integrate Xero and Sage accounting APIs. Implemented an AWS Step Function to calculate carbon usage by importing invoices through a state machine. Built a robust Admin Portal using React with TypeScript. Enhanced the CRM application with Cypress for end-to-end tests and Jest for unit tests."
+    description: "Developed a <strong>Node.js</strong>/<strong>Express</strong> server hosted on <strong>AWS Lambda</strong> to integrate <strong>Xero</strong> and <strong>Sage</strong> accounting APIs. Implemented an <strong>AWS Step Function</strong> to calculate carbon usage by importing invoices through a state machine. Built a robust Admin Portal using <strong>React</strong> with <strong>TypeScript</strong>. Enhanced the CRM application with <strong>Cypress</strong> for end-to-end tests and <strong>Jest</strong> for unit tests."
   },
   {
     company: "Overteam",
@@ -39,7 +47,7 @@ const workExperience = [
     location: "Moscow, Russia",
     period: "May 2021 - May 2022",
     website: "https://overteam.ru/",
-    description: "Developed complex SQL queries and Node.js backend for a dynamic AdInsure insurance platform. Built React UI components for a seamless user experience. Utilized NodeJS and Puppeteer to generate dynamic contracts based on user input. Implemented validation handling for the contract creation process and designed unit tests using Mocha."
+    description: "Developed complex <strong>SQL</strong> queries and <strong>Node.js</strong> backend for a dynamic AdInsure insurance platform. Built <strong>React</strong> UI components for a seamless user experience. Utilized <strong>NodeJS</strong> and <strong>Puppeteer</strong> to generate dynamic contracts based on user input. Implemented validation handling for the contract creation process and designed unit tests using <strong>Mocha</strong>."
   }
 ];
 
@@ -148,12 +156,14 @@ export default function Home() {
           </h2>
           <div className="space-y-4">
             <p className="text-[#666666] dark:text-[#a7a7a7] max-w-3xl leading-relaxed">
-              Full‑Stack engineer specializing in React, Node, TypeScript, and AWS (Lambda, DynamoDB, OpenSearch, StateMachines).
+              Full‑Stack engineer specializing in <strong>React</strong>, <strong>Node</strong>, <strong>TypeScript</strong>, and <strong>AWS</strong> (<strong>Lambda</strong>, <strong>DynamoDB</strong>, <strong>OpenSearch</strong>, <strong>StateMachines</strong>).
               I&apos;m currently studying Next.js and GenAI.
             </p>
             <p className="text-[#666666] dark:text-[#a7a7a7] max-w-3xl leading-relaxed">
-              I have 3 years of experience in the industry and I have built applications for the insurance,
-              environmental sustainability, and financial industries.
+              Currently building <strong className="text-[#2563eb] dark:text-[#2563eb]">Hack Frontend</strong>, a platform dedicated to enhancing frontend development skills and preparing candidates for successful interviews.
+            </p>
+            <p className="text-[#666666] dark:text-[#a7a7a7] max-w-3xl leading-relaxed">
+              Over 3 years of experience in the industry and I have built applications for the insurance, environmental sustainability, and financial industries.
             </p>
           </div>
 
@@ -200,7 +210,7 @@ export default function Home() {
 
                       {/* Job Description */}
                       <div className="mt-4">
-                        <p className="text-[#666666] dark:text-[#a7a7a7] leading-relaxed">{job.description}</p>
+                        <p className="text-[#666666] dark:text-[#a7a7a7] leading-relaxed" dangerouslySetInnerHTML={{ __html: job.description }} />
                       </div>
                     </div>
                   ))}

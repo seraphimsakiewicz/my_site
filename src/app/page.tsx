@@ -15,7 +15,7 @@ import { TechStack } from "@/src/components/tech-stack";
 import ThemeSwitch from "@/src/components/ThemeSwitch";
 import Link from "next/link";
 
-// Work experience data
+// Work experience data with bullet points
 const workExperience = [
   {
     company: "Hack Frontend",
@@ -23,7 +23,12 @@ const workExperience = [
     location: "Sparta, New Jersey",
     period: "January 2025 - Present",
     website: "https://hackfrontend.com/",
-    description: "Managed database migrations using <strong>Prisma</strong> and <strong>Neon.js</strong> for seamless schema updates and efficient data handling. Led the <strong>UX/UI design</strong> planning for pagination and filtering of our problems, to allow users to find and share them easily. Implemented dynamic URL‑based filtering and responsive pagination using <strong>Next.js</strong>, <strong>Radix UI</strong>, and <strong>Lucide React</strong>. Built a promo code system using <strong>React Hooks</strong> (<strong>useState</strong>, <strong>useEffect</strong>) to boost user engagement and platform growth."
+    bullets: [
+      "Managed database migrations using <strong>Prisma</strong> and <strong>Neon.js</strong> for seamless schema updates and efficient data handling.",
+      "Led the <strong>UX/UI design</strong> planning for pagination and filtering of our problems, to allow users to find and share them easily.",
+      "Implemented dynamic URL‑based filtering and responsive pagination using <strong>Next.js</strong>, <strong>Radix UI</strong>, and <strong>Lucide React</strong>.",
+      "Built a promo code system using <strong>React Hooks</strong> (<strong>useState</strong>, <strong>useEffect</strong>) to boost user engagement and platform growth."
+    ]
   },
   {
     company: "Method3",
@@ -31,7 +36,12 @@ const workExperience = [
     location: "Sparta, New Jersey",
     period: "July 2023 - December 2024",
     website: "https://method3.com/",
-    description: "Built a full-stack <strong>AWS S3</strong> content management system with <strong>React</strong> and <strong>Node</strong>. Rebuilt over 100 pages from jQuery to modern, responsive pages using <strong>React</strong>, <strong>TypeScript</strong>, and <strong>Material-UI</strong>. Developed interactive tools with <strong>React Reducer</strong> and <strong>MUI</strong> components. Conducted rigorous code reviews, promoted best practices, and optimized <strong>GitLab</strong> deployments."
+    bullets: [
+      "Built a full-stack <strong>AWS S3</strong> content management system with <strong>React</strong> and <strong>Node.js</strong>, empowering the marketing team to manage their content independently.",
+      "Rebuilt over 100 pages from jQuery to modern, responsive pages using <strong>React</strong>, <strong>TypeScript</strong>, and <strong>Material-UI (MUI)</strong>, and tested thoroughly with <strong>React Testing Library</strong> for maintainability and performance.",
+      "Developed engaging, interactive tools such as quizzes and calculators with <strong>React Reducer</strong>, leveraging <strong>MUI</strong>'s pre-built components and responsive design system.",
+      "Conducted rigorous code reviews, promoted best practices, and optimized <strong>GitLab</strong> deployments to foster continuous improvement and ensure high-quality code."
+    ]
   },
   {
     company: "Maze Digital",
@@ -39,7 +49,13 @@ const workExperience = [
     location: "Marsa, Malta",
     period: "March 2022 - July 2023",
     website: "https://maze.digital/",
-    description: "Developed a <strong>Node.js</strong>/<strong>Express</strong> server hosted on <strong>AWS Lambda</strong> to integrate <strong>Xero</strong> and <strong>Sage</strong> accounting APIs. Implemented an <strong>AWS Step Function</strong> to calculate carbon usage by importing invoices through a state machine. Built a robust Admin Portal using <strong>React</strong> with <strong>TypeScript</strong>. Enhanced the CRM application with <strong>Cypress</strong> for end-to-end tests and <strong>Jest</strong> for unit tests."
+    bullets: [
+      "Developed a <strong>Node.js</strong>/<strong>Express</strong> server hosted on <strong>AWS Lambda</strong> to seamlessly integrate <strong>Xero</strong> and <strong>Sage</strong> accounting APIs, enabling customers to import invoices and track their carbon usage.",
+      "Implemented an <strong>AWS Step Function</strong> to efficiently calculate carbon usage by importing invoices through a well-architected state machine.",
+      "Built a robust and user-friendly Admin Portal using <strong>React</strong> with <strong>TypeScript</strong>, empowering admins to efficiently assist customers and manage user permissions and their data.",
+      "Significantly enhanced the efficiency and reliability of the CRM application by implementing comprehensive automated testing using <strong>Cypress</strong> for end-to-end tests and <strong>Jest</strong> for unit tests.",
+      "Provided mentorship and guidance to two junior programmers, focusing on best practices and conducting thorough code reviews to ensure high-quality contributions."
+    ]
   },
   {
     company: "Overteam",
@@ -47,7 +63,13 @@ const workExperience = [
     location: "Moscow, Russia",
     period: "May 2021 - May 2022",
     website: "https://overteam.ru/",
-    description: "Developed complex <strong>SQL</strong> queries and <strong>Node.js</strong> backend for a dynamic AdInsure insurance platform. Built <strong>React</strong> UI components for a seamless user experience. Utilized <strong>NodeJS</strong> and <strong>Puppeteer</strong> to generate dynamic contracts based on user input. Implemented validation handling for the contract creation process and designed unit tests using <strong>Mocha</strong>."
+    bullets: [
+      "Developed complex <strong>SQL</strong> queries and stored procedures for the <strong>Node.js</strong> backend, optimizing data retrieval and ensuring secure access based on user roles.",
+      "Built a dynamic AdInsure Insurance platform using <strong>React</strong>, integrating UI components to create a seamless user experience.",
+      "Utilized <strong>Node.js</strong> and <strong>Puppeteer</strong> to generate dynamic contracts based on user input, streamlining the contract creation process.",
+      "Implemented validation handling for the contract creation process, ensuring data integrity and minimizing potential errors.",
+      "Designed and executed unit tests using <strong>Mocha</strong>, guaranteeing the stability and reliability of new features."
+    ]
   }
 ];
 
@@ -209,7 +231,13 @@ export default function Home() {
 
                       {/* Job Description */}
                       <div className="mt-4">
-                        <p className="text-[#666666] dark:text-[#a7a7a7] leading-relaxed" dangerouslySetInnerHTML={{ __html: job.description }} />
+                        <ul className="space-y-2 list-disc pl-5">
+                          {job.bullets.map((bullet, i) => (
+                            <li key={i} className="text-[#666666] dark:text-[#a7a7a7] leading-relaxed">
+                              <span dangerouslySetInnerHTML={{ __html: bullet }} />
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
                   ))}

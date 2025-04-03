@@ -157,10 +157,9 @@ export default function Home() {
           <div className="space-y-4">
             <p className="text-[#666666] dark:text-[#a7a7a7] max-w-3xl leading-relaxed">
               Full‑Stack engineer specializing in <strong>React</strong>, <strong>Node</strong>, <strong>TypeScript</strong>, and <strong>AWS</strong> (<strong>Lambda</strong>, <strong>DynamoDB</strong>, <strong>OpenSearch</strong>, <strong>StateMachines</strong>).
-              I&apos;m currently studying Next.js and GenAI.
             </p>
             <p className="text-[#666666] dark:text-[#a7a7a7] max-w-3xl leading-relaxed">
-              Currently building <strong className="text-[#2563eb] dark:text-[#2563eb]">Hack Frontend</strong>, a platform dedicated to enhancing frontend development skills and preparing candidates for successful interviews.
+              Currently building <Link href="https://hackfrontend.com" target="_blank" className="font-bold text-[#2563eb] dark:text-[#2563eb] hover:underline">Hack Frontend</Link>, a platform dedicated to enhancing frontend development skills and preparing candidates for successful interviews.
             </p>
             <p className="text-[#666666] dark:text-[#a7a7a7] max-w-3xl leading-relaxed">
               Over 3 years of experience in the industry and I have built applications for the insurance, environmental sustainability, and financial industries.

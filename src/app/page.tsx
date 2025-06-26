@@ -19,40 +19,40 @@ import Link from "next/link";
 const workExperience = [
   {
     company: "Hack Frontend",
-    position: "Founding Engineer",
-    location: "Sparta, New Jersey",
+    position: "Full Stack Engineer",
+    location: "Sparta, NJ - Remote",
     period: "January 2025 - Present",
     website: "https://hackfrontend.com/",
     bullets: [
       "Led <strong>SQL</strong> schema migrations using <strong>Prisma</strong> and <strong>Neon.js</strong>, improving data accuracy and reducing deploy friction.",
-      "Architected in-browser <strong>Monaco Editor</strong> problem-solving, using <strong>Monaco Editor</strong> to increase user experience.",
-      "Designed dynamic filters and pagination with <strong>Next.js</strong> and <strong>Shaden</strong> to streamline navigation across problem sets.",
-      "Launched a promo code system using <strong>React Hooks</strong> to support growth experiments and sales."
+      "Architected an in-browser <strong>JavaScript</strong> problem-solving <strong>IDE</strong> using <strong>Monaco Editor</strong> to increase user engagement.",
+      "Designed dynamic filters and pagination with <strong>Next.js</strong> and <strong>Shadcn</strong> to streamline navigation across problem sets.",
+      "Launched a promo code system using <strong>React Hooks</strong> to support growth experiments and onboard new users."
     ]
   },
   {
     company: "Method3",
     position: "Full Stack Developer",
-    location: "Sparta, New Jersey",
+    location: "Sparta, New Jersey - Remote",
     period: "July 2023 - December 2024",
     website: "https://method3.com/",
     bullets: [
-      "Built an <strong>AWS S3</strong>-backed CMS using <strong>React</strong> and <strong>Node.js</strong>, saving devs ~20 hours/week.",
+      "Built an <strong>AWS S3</strong>-backed <strong>CMS</strong> using <strong>React</strong> and <strong>Node.js</strong>, saving devs ~20 hours/week.",
       "Migrated 100+ <strong>jQuery</strong> pages to modern <strong>React</strong> components using <strong>TypeScript</strong> and <strong>MUI</strong>.",
-      "Delivered fully-tested UI with the <strong>React Testing Library</strong> and <strong>Jest</strong>, achieving 80% test coverage.",
+      "Delivered fully-tested UI features using <strong>React Testing Library</strong> and <strong>Jest</strong>, achieving 99% test coverage.",
       "Created calculators and quiz tools with <strong>React Reducer</strong> and <strong>MUI</strong> to improve engagement.",
-      "Conducted 200+ code reviews and enhanced CI/CD pipelines for smoother deploys."
+      "Conducted 200+ code reviews and enhanced <strong>GitLab CLI</strong> pipelines for smoother deploys."
     ]
   },
   {
     company: "Maze Digital",
     position: "Full Stack Developer",
-    location: "Marsa, Malta",
+    location: "Marsa, Malta - Remote",
     period: "March 2022 - July 2023",
     website: "https://maze.digital/",
     bullets: [
       "Built a <strong>Node.js</strong>/<strong>Express API</strong> hosted on <strong>AWS Lambda</strong> for invoice integration with <strong>Xero</strong> and <strong>Sage</strong>.",
-      "Optimized <strong>AWS Step Functions</strong> to process invoices ~30% faster using recursion and caching.",
+      "Optimized <strong>AWS Step Functions</strong> to process invoices ~40% faster using recursion and caching.",
       "Developed a <strong>React + TypeScript</strong> admin portal that reduced admin costs by ~50%.",
       "Decreased bugs by ~20% via <strong>Cypress</strong> and <strong>Jest</strong> testing across edge cases.",
       "Mentored junior developers on how <strong>React</strong> works and walked them through the codebase."
@@ -61,7 +61,7 @@ const workExperience = [
   {
     company: "Overteam",
     position: "Full Stack Developer",
-    location: "Moscow, Russia",
+    location: "Moscow, Russia - Hybrid",
     period: "December 2021 - March 2022",
     website: "https://app.overteam.ru/auth/login",
     bullets: [

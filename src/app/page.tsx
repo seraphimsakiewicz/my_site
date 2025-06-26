@@ -24,10 +24,10 @@ const workExperience = [
     period: "January 2025 - Present",
     website: "https://hackfrontend.com/",
     bullets: [
-      "Managed database migrations using <strong>Prisma</strong> and <strong>Neon.js</strong> for seamless schema updates and efficient data handling.",
-      "Led the <strong>UX/UI design</strong> planning for pagination and filtering of our problems, to allow users to find and share them easily.",
-      "Implemented dynamic URL‑based filtering and responsive pagination using <strong>Next.js</strong>, <strong>Radix UI</strong>, and <strong>Lucide React</strong>.",
-      "Built a promo code system using <strong>React Hooks</strong> (<strong>useState</strong>, <strong>useEffect</strong>) to boost user engagement and platform growth."
+      "Led <strong>SQL</strong> schema migrations using <strong>Prisma</strong> and <strong>Neon.js</strong>, improving data accuracy and reducing deploy friction.",
+      "Architected in-browser <strong>Monaco Editor</strong> problem-solving, using <strong>Monaco Editor</strong> to increase user experience.",
+      "Designed dynamic filters and pagination with <strong>Next.js</strong> and <strong>Shaden</strong> to streamline navigation across problem sets.",
+      "Launched a promo code system using <strong>React Hooks</strong> to support growth experiments and sales."
     ]
   },
   {
@@ -37,10 +37,11 @@ const workExperience = [
     period: "July 2023 - December 2024",
     website: "https://method3.com/",
     bullets: [
-      "Built a full-stack <strong>AWS S3</strong> content management system with <strong>React</strong> and <strong>Node.js</strong>, empowering the marketing team to manage their content independently.",
-      "Rebuilt over 100 pages from jQuery to modern, responsive pages using <strong>React</strong>, <strong>TypeScript</strong>, and <strong>Material-UI (MUI)</strong>, and tested thoroughly with <strong>React Testing Library</strong> for maintainability and performance.",
-      "Developed engaging, interactive tools such as quizzes and calculators with <strong>React Reducer</strong>, leveraging <strong>MUI</strong>'s pre-built components and responsive design system.",
-      "Conducted rigorous code reviews, promoted best practices, and optimized <strong>GitLab</strong> deployments to foster continuous improvement and ensure high-quality code."
+      "Built an <strong>AWS S3</strong>-backed CMS using <strong>React</strong> and <strong>Node.js</strong>, saving devs ~20 hours/week.",
+      "Migrated 100+ <strong>jQuery</strong> pages to modern <strong>React</strong> components using <strong>TypeScript</strong> and <strong>MUI</strong>.",
+      "Delivered fully-tested UI with the <strong>React Testing Library</strong> and <strong>Jest</strong>, achieving 80% test coverage.",
+      "Created calculators and quiz tools with <strong>React Reducer</strong> and <strong>MUI</strong> to improve engagement.",
+      "Conducted 200+ code reviews and enhanced CI/CD pipelines for smoother deploys."
     ]
   },
   {
@@ -50,26 +51,49 @@ const workExperience = [
     period: "March 2022 - July 2023",
     website: "https://maze.digital/",
     bullets: [
-      "Developed a <strong>Node.js</strong>/<strong>Express</strong> server hosted on <strong>AWS Lambda</strong> to seamlessly integrate <strong>Xero</strong> and <strong>Sage</strong> accounting APIs, enabling customers to import invoices and track their carbon usage.",
-      "Implemented an <strong>AWS Step Function</strong> to efficiently calculate carbon usage by importing invoices through a well-architected state machine.",
-      "Built a robust and user-friendly Admin Portal using <strong>React</strong> with <strong>TypeScript</strong>, empowering admins to efficiently assist customers and manage user permissions and their data.",
-      "Significantly enhanced the efficiency and reliability of the CRM application by implementing comprehensive automated testing using <strong>Cypress</strong> for end-to-end tests and <strong>Jest</strong> for unit tests.",
-      "Provided mentorship and guidance to two junior programmers, focusing on best practices and conducting thorough code reviews to ensure high-quality contributions."
+      "Built a <strong>Node.js</strong>/<strong>Express API</strong> hosted on <strong>AWS Lambda</strong> for invoice integration with <strong>Xero</strong> and <strong>Sage</strong>.",
+      "Optimized <strong>AWS Step Functions</strong> to process invoices ~30% faster using recursion and caching.",
+      "Developed a <strong>React + TypeScript</strong> admin portal that reduced admin costs by ~50%.",
+      "Decreased bugs by ~20% via <strong>Cypress</strong> and <strong>Jest</strong> testing across edge cases.",
+      "Mentored junior developers on how <strong>React</strong> works and walked them through the codebase."
     ]
   },
   {
     company: "Overteam",
     position: "Full Stack Developer",
     location: "Moscow, Russia",
-    period: "May 2021 - May 2022",
-    website: "https://overteam.ru/",
+    period: "December 2021 - March 2022",
+    website: "https://app.overteam.ru/auth/login",
     bullets: [
-      "Developed complex <strong>SQL</strong> queries and stored procedures for the <strong>Node.js</strong> backend, optimizing data retrieval and ensuring secure access based on user roles.",
-      "Built a dynamic AdInsure Insurance platform using <strong>React</strong>, integrating UI components to create a seamless user experience.",
-      "Utilized <strong>Node.js</strong> and <strong>Puppeteer</strong> to generate dynamic contracts based on user input, streamlining the contract creation process.",
-      "Implemented validation handling for the contract creation process, ensuring data integrity and minimizing potential errors.",
-      "Designed and executed unit tests using <strong>Mocha</strong>, guaranteeing the stability and reliability of new features."
+      "Built <strong>React</strong> modules for <strong>AdInsure</strong>'s quoting and onboarding interface.",
+      "Used <strong>Node.js</strong> and <strong>Puppeteer</strong> to auto-generate contracts and cut processing time.",
+      "Added <strong>JavaScript</strong> validation layers to form workflows, reducing bug rates.",
+      "Wrote <strong>SQL</strong> queries to retrieve core data from the <strong>MySQL</strong> database.",
+      "Improved confidence in release cycles by reaching 90% test coverage with <strong>Mocha</strong>."
     ]
+  }
+];
+
+// Education data
+const education = [
+  {
+    institution: "Amazon Cloud Institute",
+    program: "Cloud Developer Program",
+    location: "Remote",
+    period: "January 2024 - December 2024"
+  },
+  {
+    institution: "Elbrus Coding Bootcamp",
+    program: "Full Stack Web Development Program",
+    location: "Moscow, Russia",
+    period: "August 2021 - December 2021"
+  },
+  {
+    institution: "Rutgers Business School",
+    degree: "B.S. in Accounting and Finance",
+    note: "Dean's List",
+    location: "New Brunswick, NJ",
+    period: "September 2016 - December 2020"
   }
 ];
 
@@ -161,7 +185,7 @@ export default function Home() {
           <div className="md:w-1/3 flex justify-center mt-8 md:mt-0">
             <div className="rounded-full border-4 border-[black] dark:border-[white] w-48 h-48 overflow-hidden">
               <Image
-                src="/images/seraphim-codes.png?height=192&width=192"
+                src="/images/me-circle.png?height=192&width=192"
                 alt="Seraphim Sakiewicz"
                 width={192}
                 height={192}
@@ -184,7 +208,7 @@ export default function Home() {
               Currently building <Link href="https://hackfrontend.com" target="_blank" className="font-bold text-[#2563eb] dark:text-[#2563eb] hover:underline">Hack Frontend</Link>, a platform dedicated to enhancing frontend development skills and preparing candidates for successful interviews.
             </p>
             <p className="text-[#666666] dark:text-[#a7a7a7] max-w-3xl leading-relaxed">
-              Over 3 years of experience in the industry and I have built applications for the insurance, environmental sustainability, and financial industries.
+              Over 4 years of experience in the industry and I have built applications for the insurance, environmental sustainability, and financial industries.
             </p>
           </div>
 
@@ -248,30 +272,35 @@ export default function Home() {
                 <h3 className="text-2xl font-bold mb-8 text-[#42446E] dark:text-white">
                   Education
                 </h3>
-                <div className="pb-8 border-b border-[#EBEAED] dark:border-gray-800">
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <h4 className="text-xl font-medium text-[#42446E] dark:text-white mb-2">
-                        Bachelor of Science in Accounting and Finance
-                      </h4>
-                      <div className="flex items-center gap-6 text-[#666666] dark:text-[#a7a7a7]">
-                        <div className="flex items-center gap-1">
-                          <GraduationCap className="w-4 h-4" />
-                          <span> Rutgers Business School</span>
+                <div className="space-y-8">
+                  {education.map((edu, index) => (
+                    <div key={index} className="pb-8 border-b border-[#EBEAED] dark:border-gray-800">
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <h4 className="text-xl font-medium text-[#42446E] dark:text-white mb-2">
+                            {edu.degree || edu.program}
+                            {edu.note && <span className="text-sm text-[#666666] dark:text-[#a7a7a7] ml-2">| {edu.note}</span>}
+                          </h4>
+                          <div className="flex items-center gap-6 text-[#666666] dark:text-[#a7a7a7]">
+                            <div className="flex items-center gap-1">
+                              <GraduationCap className="w-4 h-4" />
+                              <span>{edu.institution}</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex flex-col items-end gap-2">
+                          <div className="flex items-center gap-1">
+                            <MapPin className="w-4 h-4" />
+                            <span>{edu.location}</span>
+                          </div>
+                          <div className="flex items-center gap-1 text-[#666666] dark:text-[#a7a7a7]">
+                            <Calendar className="w-4 h-4" />
+                            <span>{edu.period}</span>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className="flex flex-col items-end gap-2">
-                      <div className="flex items-center gap-1">
-                        <MapPin className="w-4 h-4" />
-                        <span>New Brunswick, NJ</span>
-                      </div>
-                      <div className="flex items-center gap-1 text-[#666666] dark:text-[#a7a7a7]">
-                        <Calendar className="w-4 h-4" />
-                        <span>Sep 2016 - Dec 2020</span>
-                      </div>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
